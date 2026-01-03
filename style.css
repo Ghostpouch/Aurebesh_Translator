@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Aurebesh";
+    src: url("Aurebesh.otf") format("opentype");
+}
+
+#output {
+    font-family: "Aurebesh", monospace;
+    font-size: 24px;
+    margin-top: 10px;
+}
