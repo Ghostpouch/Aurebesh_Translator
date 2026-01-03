@@ -1,4 +1,4 @@
-// Aurebesh map: only uppercase letters are keys
+// Aurebesh map - only uppercase letters are keys
 const aurebeshMap = {
     A: "A", B: "B", C: "C", D: "D", E: "E",
     F: "F", G: "G", H: "H", I: "I", J: "J",
@@ -10,33 +10,55 @@ const aurebeshMap = {
     SH: "SH"
 };
 
+
+// SET UP BUTTON CLICK AND GET INPUT
+
+// When the Translate button is clicked, run this function
 document.getElementById("translateBtn").addEventListener("click", function() {
+    // Get the text the user typed in
     const input = document.getElementById("inputText").value;
+    // Prepare a variable to store the translated Aurebesh output
     let output = "";
+    // Index to keep track of the current character in the input
     let i = 0;
 
+
+
+// LOOP THROUGH INPUT TO HANDLE DIGRAPHS 
+
     while (i < input.length) {
-        // Look ahead for digraphs (case-insensitive)
+        /// Check if there are at least two characters left for a digraph
         if (i + 1 < input.length) {
+            // Combine current and next character to form a pair
             const pair = input[i] + input[i + 1];
+            // Convert pair to uppercase so it matches the Aurebesh map keys
             const pairUpper = pair.toUpperCase();
+            // If the pair is a digraph (TH or SH)
             if (aurebeshMap[pairUpper]) {
-                // Preserve original case: if first letter is lowercase, output lowercase
+                // Check if the first letter is lowercase
                 const isLower = input[i] === input[i].toLowerCase();
+                // Add the Aurebesh symbol, preserving lowercase if needed
                 output += isLower ? aurebeshMap[pairUpper].toLowerCase() : aurebeshMap[pairUpper];
-                i += 2; // skip next letter
-                continue;
+                
+                i += 2; // Skip the next character since it's part of the digraph
+                continue; // Go back to the start of the loop for the next character
             }
         }
 
-        // Single letter (case-insensitive)
+        // HANDLE REMAINING CHARACTERS AND DISPLAY
+
+        // Get the current character
         const letter = input[i];
+        // Convert to uppercase to match the Aurebesh map keys
         const letterUpper = letter.toUpperCase();
+        // If the original letter was lowercase, output lowercase symbol
         if (aurebeshMap[letterUpper]) {
+            // Otherwise, output uppercase symbol
             output += letter === letter.toLowerCase() ? aurebeshMap[letterUpper].toLowerCase() : aurebeshMap[letterUpper];
         } else {
-            output += letter; // keep punctuation/spaces
+            output += letter; // keep punctuation and spaces
         }
+        // Move to the next character
         i++;
     }
 
