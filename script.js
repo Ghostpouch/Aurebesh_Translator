@@ -1,3 +1,4 @@
+
 // Aurebesh map - only uppercase letters are keys
 const aurebeshMap = {
     A: "A", B: "B", C: "C", D: "D", E: "E",
@@ -5,7 +6,6 @@ const aurebeshMap = {
     K: "K", L: "L", M: "M", N: "N", O: "O",
     P: "P", Q: "Q", R: "R", S: "S", T: "T",
     U: "U", V: "V", W: "W", X: "X", Y: "Y", Z: "Z",
-
     // Digraphs mapped to the font’s Unicode characters
     CH: "\u00E7",
     AE: "\u00E6",
@@ -17,9 +17,7 @@ const aurebeshMap = {
     TH: "\u00F0"
 };
 
-
 // SET UP BUTTON CLICK AND GET INPUT
-
 // Live translation: updates output as the user types
 document.getElementById("inputText").addEventListener("input", function() {
     // Get the text the user typed in
@@ -30,9 +28,7 @@ document.getElementById("inputText").addEventListener("input", function() {
     let i = 0;
 
 
-
 // LOOP THROUGH INPUT TO HANDLE DIGRAPHS 
-
     while (i < input.length) {
         /// Check if there are at least two characters left for a digraph
         if (i + 1 < input.length) {
@@ -51,9 +47,7 @@ document.getElementById("inputText").addEventListener("input", function() {
                 continue; // Go back to the start of the loop for the next character
             }
         }
-
         // HANDLE REMAINING CHARACTERS AND DISPLAY
-
         // Get the current character
         const letter = input[i];
         // Convert to uppercase to match the Aurebesh map keys
@@ -68,6 +62,5 @@ document.getElementById("inputText").addEventListener("input", function() {
         // Move to the next character
         i++;
     }
-
     document.getElementById("output").innerText = output;
 });
