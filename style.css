@@ -147,6 +147,21 @@ footer p {
     letter-spacing: 0.3em;
 }
 
+
+.dots::after {
+  content: '';
+  display: inline-block;
+  width: 1ch;
+  animation: dots 1s steps(3, end) infinite;
+}
+
+@keyframes dots {
+  0%   { content: ''; }
+  33%  { content: '.'; }
+  66%  { content: '..'; }
+  100% { content: '...'; }
+}
+
 body {
     cursor: url("cursor.png"), auto;
 }
