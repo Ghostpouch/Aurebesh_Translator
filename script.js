@@ -20,8 +20,8 @@ const aurebeshMap = {
 
 // SET UP BUTTON CLICK AND GET INPUT
 
-// When the Translate button is clicked, run this function
-document.getElementById("translateBtn").addEventListener("click", function() {
+// Live translation: updates output as the user types
+document.getElementById("inputText").addEventListener("input", function() {
     // Get the text the user typed in
     const input = document.getElementById("inputText").value;
     // Prepare a variable to store the translated Aurebesh output
