@@ -69,3 +69,13 @@ document.getElementById("inputText").addEventListener("input", function() {
     }
     document.getElementById("output").innerText = output;
 });
+
+document.getElementById("clearBtn").addEventListener("click", function() {
+    document.getElementById("inputText").value = "";
+    document.getElementById("output").innerText = "";
+
+    // Play beep/click sound
+    const audio = new Audio("click.mp3");
+    audio.play();
+});
+
