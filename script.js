@@ -6,8 +6,15 @@ const aurebeshMap = {
     P: "P", Q: "Q", R: "R", S: "S", T: "T",
     U: "U", V: "V", W: "W", X: "X", Y: "Y", Z: "Z",
 
-    TH: "TH",
-    SH: "SH"
+    // Digraphs mapped to the font’s Unicode characters
+    CH: "\u00E7",
+    AE: "\u00E6",
+    EO: "\u00CB",
+    KH: "\u00FE",
+    NG: "\u00F1",
+    OO: "\u00F8",
+    SH: "\u00DF",
+    TH: "\u00F0"
 };
 
 
