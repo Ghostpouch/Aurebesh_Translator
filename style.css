@@ -138,29 +138,33 @@ footer {
     text-align: center;
     border-top: 1px solid var(--border-color);
     padding-top: 1.5rem;
+    color: #64ffda; /* whole footer text glows */
+    text-shadow: 0 0 5px rgba(100, 255, 218, 0.4), 
+                 0 0 10px rgba(100, 255, 218, 0.3);
 }
 
 footer p {
     font-size: 0.65rem;
-    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.3em;
 }
 
-
+/* Only the dots animate */
 .dots::after {
-  content: '';
-  display: inline-block;
-  width: 1ch;
-  animation: dots 1s steps(3, end) infinite;
+    content: '';
+    display: inline-block;
+    width: 1ch;              /* reserve space for animation */
+    animation: dots 1s steps(3, end) infinite;
 }
 
 @keyframes dots {
-  0%   { content: ''; }
-  33%  { content: '.'; }
-  66%  { content: '..'; }
-  100% { content: '...'; }
+    0%   { content: ''; }
+    33%  { content: '.'; }
+    66%  { content: '..'; }
+    100% { content: '...'; }
 }
+
+
 
 body {
     cursor: url("cursor.png"), auto;
