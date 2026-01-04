@@ -17,7 +17,12 @@ const aurebeshMap = {
     TH: "\u00F0"
 };
 
-// SET UP BUTTON CLICK AND GET INPUT
+document.getElementById("clearBtn").addEventListener("click", function() {
+    document.getElementById("inputText").value = "";
+    document.getElementById("output").innerText = "";
+});
+
+// LIVE TRANSLATION AND GET INPUT
 // Live translation: updates output as the user types
 document.getElementById("inputText").addEventListener("input", function() {
     // Get the text the user typed in
