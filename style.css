@@ -1,3 +1,4 @@
+/*Theme colours and variables*/
 :root {
     --bg-color: #0f1215;
     --container-bg: #1a1d21;
@@ -9,17 +10,20 @@
     --button-hover: #1e293b;
 }
 
+/*Aurebesh Font*/
 @font-face {
     font-family: "Aurebesh";
     src: url("Aurebesh.otf") format("opentype");
 }
 
+/*Reset Styles*/
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/*Background Styles*/
 body {
     background-color: var(--bg-color);
     background-image: url("background.jpg");
@@ -36,6 +40,7 @@ body {
     line-height: 1.6;
 }
 
+/*Main container Styles*/
 .container {
     background-color: var(--container-bg);
     width: 100%;
@@ -46,11 +51,13 @@ body {
     border: 1px solid var(--border-color);
 }
 
+/*Space and Centre Stuff Below*/
 header {
     margin-bottom: 2.5rem;
     text-align: center;
 }
 
+/*Text - Aurebesh Translator<*/
 h1 {
     font-size: 1.5rem;
     font-weight: 300;
@@ -60,6 +67,7 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
+/*Text - Imperial Standard Linguistic Interface v2.1<*/
 .subtitle {
     font-size: 0.75rem;
     color: var(--text-secondary);
@@ -67,6 +75,7 @@ h1 {
     letter-spacing: 0.2em;
 }
 
+/*Text - Input Source (English)<*/
 label {
     display: block;
     font-size: 0.75rem;
@@ -75,11 +84,11 @@ label {
     color: var(--text-secondary);
     margin-bottom: 0.75rem;
 }
-
+/*Spacing*/
 .input-section {
     margin-bottom: 2rem;
 }
-
+/*Styles for input box*/
 textarea {
     width: 100%;
     background-color: var(--input-bg);
@@ -94,10 +103,12 @@ textarea {
     outline: none;
 }
 
+/*Border of box highlights when clicked*/
 textarea:focus {
     border-color: var(--accent-color);
 }
 
+/*Clear Button*/
 button {
     width: 100%;
     margin-top: 1rem;
@@ -123,12 +134,14 @@ button:active {
     transform: translateY(1px);
 }
 
+
+/*Output Border*/
 .output-section {
     border-top: 1px solid var(--border-color);
     padding-top: 2rem;
     min-height: 120px;
 }
-
+/*Output Display in font*/
 .output-display {
     font-family: "Aurebesh", monospace;
     font-size: 1.75rem;
@@ -138,6 +151,7 @@ button:active {
     text-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
 }
 
+/*Spacing and text glow for link animation*/
 footer {
     margin-top: 3rem;
     text-align: center;
@@ -147,21 +161,22 @@ footer {
     text-shadow: 0 0 5px rgba(100, 255, 218, 0.4), 
                  0 0 10px rgba(100, 255, 218, 0.3);
 }
-
+/*Footer text*/
 footer p {
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.3em;
 }
 
-/* Only the dots animate */
+/*Only the dots animate*/
 .dots::after {
     content: '';
     display: inline-block;
-    width: 1ch;              /* reserve space for animation */
+    width: 1ch;              /*reserve space for animation*/
     animation: dots 1s steps(3, end) infinite;
 }
 
+/*Steps of dots animation*/
 @keyframes dots {
     0%   { content: ''; }
     33%  { content: '.'; }
@@ -169,12 +184,12 @@ footer p {
     100% { content: '...'; }
 }
 
-
-
+/*Custom cursor*/
 body {
     cursor: url("cursor.png"), auto;
 }
 
+/*Grain overlay*/
 body::before {
     content: "";
     position: fixed;
