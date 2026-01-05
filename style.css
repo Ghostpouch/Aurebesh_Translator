@@ -174,3 +174,13 @@ footer p {
 body {
     cursor: url("cursor.png"), auto;
 }
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("grain-wall-pattern_1053-174.avif");
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 999;
+}
